@@ -1,14 +1,17 @@
 package mouse.labs.twoSum;
 
+
+import java.util.HashMap;
+
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int n = nums.length;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < i; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[] {i, j};
-                }
+        HashMap<Integer, Integer> deviationMap = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            Integer index = deviationMap.get(nums[i]);
+            if (index != null) {
+                return new int[]{index, i};
             }
+            deviationMap.put(target - nums[i], i);
         }
         return null;
     }
