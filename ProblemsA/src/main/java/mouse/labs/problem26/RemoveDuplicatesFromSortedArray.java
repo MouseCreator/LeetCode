@@ -1,6 +1,6 @@
 package mouse.labs.problem26;
 
-public class Solution {
+public class RemoveDuplicatesFromSortedArray {
     public int removeDuplicates(int[] nums) {
         int toInsert = 0;
         int toCompare = 1;

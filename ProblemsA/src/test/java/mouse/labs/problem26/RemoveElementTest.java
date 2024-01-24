@@ -6,9 +6,9 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SolutionTest {
+class RemoveElementTest {
 
-    private final Solution solution = new Solution();
+    private final RemoveDuplicatesFromSortedArray removeDuplicatesFromSortedArray = new RemoveDuplicatesFromSortedArray();
     @Test
     void removeDuplicates() {
         int[] arr = new int[] {0,0,1,1,1,2,2,3,3,4};
@@ -24,7 +24,7 @@ class SolutionTest {
     }
 
     private void runAndCompare(int[] arr, int[] exp, int expK) {
-        int k = solution.removeDuplicates(arr);
+        int k = removeDuplicatesFromSortedArray.removeDuplicates(arr);
         assertEquals(k, expK);
         compareSubArrays(exp, arr, k);
     }

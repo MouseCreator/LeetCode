@@ -1,9 +1,9 @@
-package mouse.labs.twoSum;
+package mouse.labs.problem1;
 
 
 import java.util.HashMap;
 
-public class Solution {
+public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> deviationMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {

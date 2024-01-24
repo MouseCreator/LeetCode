@@ -1,4 +1,4 @@
-package mouse.labs.twoSum;
+package mouse.labs.problem1;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SolutionTest {
+class RemoveElementTest {
 
     @Test
     void twoSum() {
@@ -16,7 +16,7 @@ class SolutionTest {
     }
 
     private void withExpected(int[] arr, int target, int[] expected) {
-        Solution solution = new Solution();
+        TwoSum solution = new TwoSum();
         int[] s = solution.twoSum(arr, target);
         s = toSorted(s);
         String onFail = "Failed to compare " + Arrays.toString(expected) + " and " + Arrays.toString(s);

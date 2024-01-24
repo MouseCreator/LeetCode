@@ -1,8 +1,8 @@
-package mouse.labs.romanToInteger;
+package mouse.labs.problem13;
 
 import java.util.HashMap;
 
-public class Solution {
+public class RomanToInteger {
     private static final HashMap<Character, Integer> letterValueMap = new HashMap<>();
     static {
         letterValueMap.put('M', 1000);
