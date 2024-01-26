@@ -8,7 +8,7 @@ class RemoveElementTest {
 
     @Test
     void searchInsert() {
-        RemoveElement solution = new RemoveElement();
+        SearchInsert solution = new SearchInsert();
         assertEquals(2, solution.searchInsert(new int[]{1,3,5,6}, 5));
         assertEquals(1, solution.searchInsert(new int[]{1,3,5,6}, 2));
         assertEquals(4, solution.searchInsert(new int[]{1,3,5,6}, 7));

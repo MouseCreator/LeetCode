@@ -1,6 +1,6 @@
 package mouse.labs.problem27;
 
-public class Solution {
+public class RemoveElement {
     public int removeElement(int[] nums, int val) {
         int last = nums.length;
         for (int i = 0; i < last; i++) {

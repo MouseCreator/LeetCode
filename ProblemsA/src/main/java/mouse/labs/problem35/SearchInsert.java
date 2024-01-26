@@ -1,6 +1,6 @@
 package mouse.labs.problem35;
 
-public class RemoveElement {
+public class SearchInsert {
     public int searchInsert(int[] nums, int target) {
         int low = 0;
         int high = nums.length;

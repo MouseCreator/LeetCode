@@ -8,7 +8,7 @@ class RemoveElementTest {
 
     @Test
     void singleValue() {
-        Solution solution = new Solution();
+        RemoveElement solution = new RemoveElement();
         int k = solution.removeElement(new int[]{1}, 1);
         assertEquals(0, k);
     }
