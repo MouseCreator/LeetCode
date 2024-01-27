@@ -1,13 +1,13 @@
 package mouse.labs.problem748;
 
-import java.util.HashMap;
-
 public class ShortestCompletingWord {
+    private final int[] primeNumbers = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101 };
     public String shortestCompletingWord(String licensePlate, String[] words) {
-        HashMap<Character, Integer> targetMap = countChars(licensePlate);
+        long target = toPrimeProd(licensePlate);
         String result = null;
         for (String word : words) {
-            if (!containsTarget(word, targetMap)) {
+            long product = toPrimeProd(word);
+            if (product % target != 0) {
                 continue;
             }
             if (result == null || result.length() > word.length()) {
@@ -17,31 +17,16 @@ public class ShortestCompletingWord {
         return result;
     }
 
-    private boolean containsTarget(String word, HashMap<Character, Integer> targetMap) {
-        HashMap<Character, Integer> wordMap = countChars(word);
-        for (Character character : targetMap.keySet()) {
-            Integer targetCount = targetMap.get(character);
-            Integer actualCount = wordMap.get(character);
-            if (actualCount == null || actualCount < targetCount) {
-                return false;
+    private long toPrimeProd(String word) {
+        long product = 1L;
+        for (Character ch : word.toCharArray()) {
+            if (Character.isAlphabetic(ch)) {
+                int id = Character.toLowerCase(ch) - 'a';
+                product *= primeNumbers[id];
             }
         }
-        return true;
+        return product;
     }
 
-    private HashMap<Character, Integer> countChars(String word) {
-        HashMap<Character, Integer> resultMap = new HashMap<>();
-        for (char ch : word.toCharArray()) {
-            if (!Character.isAlphabetic(ch)) {
-                continue;
-            }
-            ch = Character.toLowerCase(ch);
-            Integer count = resultMap.get(ch);
-            if (count == null) {
-                count = 0;
-            }
-            resultMap.put(ch, count + 1);
-        }
-        return resultMap;
-    }
+
 }
