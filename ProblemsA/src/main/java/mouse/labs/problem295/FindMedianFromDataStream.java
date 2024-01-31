@@ -1,5 +1,6 @@
 package mouse.labs.problem295;
 
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -59,7 +60,11 @@ public class FindMedianFromDataStream {
                 addAndPollFrom(num, false);
             }
         }
-        median = (root1 + root2) / 2.0;
+        if (even) {
+            median = (double) root1;
+        } else {
+            median = (root1 + root2) / 2.0;
+        }
 
     }
 
