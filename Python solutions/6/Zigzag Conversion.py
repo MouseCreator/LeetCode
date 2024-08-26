@@ -4,6 +4,7 @@ class Solution(object):
         if numRows == 1 or lens <= numRows:
             return s
         symbolsZigZaging = numRows - 2
+
         positions = []
         step = numRows + symbolsZigZaging
         after_step = 0
